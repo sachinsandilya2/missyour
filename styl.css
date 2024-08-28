@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: black;
+}
+
+.stars {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.8;
+}
+
+.message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+}
+
+.chunk {
+    display: inline-block;
+    animation: chunkAnimation 4s infinite alternate;
+}
+
+.emoji {
+    display: inline-block;
+    font-size: 2rem;
+    animation: emojiAnimation 1.5s infinite alternate;
+}
+
+@keyframes starfall {
+    0% {
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(50vh);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+}
+
+.star-fall {
+    animation: starfall 6s infinite linear;
+}
+
+@keyframes chunkAnimation {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+        color: red;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+        color: orange;
+    }
+    100% {
+        opacity: 0.8;
+        transform: scale(1);
+        color: yellow;
+    }
+}
+
+@keyframes emojiAnimation {
+    0% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
